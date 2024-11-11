@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <style>
+    /* Gaya Umum */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFECF4;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #FF6BAF;
+    }
+    p {
+      font-size: 1.2em;
+      color: #666;
+    }
+    /* Tombol */
+    #showButton {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #FF6BAF;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    #showButton:hover {
+      transform: scale(1.1);
+    }
+    /* Hiasan Animasi */
+    .confetti, .balloon, .doll {
+      position: absolute;
+      display: none;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+    /* Animasi Balon */
+    .balloon {
+      width: 50px;
+      height: 70px;
+      background-color: #FFD700;
+      border-radius: 50%;
+      top: 100%;
+      animation-name: floatBalloon;
+    }
+    @keyframes floatBalloon {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-100vh); }
+    }
+    /* Animasi Boneka */
+    .doll {
+      width: 80px;
+      height: 80px;
+      background-color: #FF69B4;
+      border-radius: 10px;
+      top: 100%;
+      animation-name: floatDoll;
+    }
+    @keyframes floatDoll {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-100vh); }
+    }
+    /* Animasi Kertas Warna-Warni */
+    .confetti {
+      width: 10px;
+      height: 10px;
+      background-color: #FFA500;
+      top: -50px;
+      animation-name: fallConfetti;
+    }
+    @keyframes fallConfetti {
+      from { transform: translateY(-50px); }
+      to { transform: translateY(100vh); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Selamat Ulang Tahun ke-17!</h1>
+  <p>Happy Birthday yaa kakk ,semoga diberi rezeki yang banyak dipermudahkann segalaa urusannya.Aminnn 🎉</p>
+  
+  <button id="showButton">Klik untuk Merayakan 🎈</button>
+
+  <audio id="backgroundMusic" src="happy.mp3"></audio>
+
+  <!-- Elemen hiasan -->
+  <div class="balloon" style="left: 20%;"></div>
+  <div class="balloon" style="left: 80%; background-color: #FF69B4;"></div>
+  <div class="doll" style="left: 50%;"></div>
+  <div class="confetti" style="left: 10%;"></div>
+  <div class="confetti" style="left: 30%;"></div>
+  <div class="confetti" style="left: 50%;"></div>
+  <div class="confetti" style="left: 70%;"></div>
+  <div class="confetti" style="left: 90%;"></div>
+
+  <script>
+    // Fungsi untuk memunculkan hiasan dan memainkan musik
+    document.getElementById("showButton").addEventListener("click", function() {
+      // Memunculkan balon, boneka, dan kertas warna-warni
+      document.querySelectorAll('.balloon, .doll, .confetti').forEach(function(element) {
+        element.style.display = 'block';
+      });
+
+      // Memutar musik
+      const music = document.getElementById("backgroundMusic");
+      music.play();
+    });
+  </script>
+</body>
+</html>
